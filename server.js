@@ -1,17 +1,28 @@
 const express = require('express');
+const config = require('config');
+const mongoose = require('mongoose');
+
 
 const app = express();
 
-app.get('/api/customers', (req, res) => {
-  const customers = [
-    {id: 1, firstName: 'John', lastName: 'Doe'},
-    {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-    {id: 3, firstName: 'Mary', lastName: 'Swanson'},
-  ];
+// Bodyparser Middleware
+app.use(express.json());
 
-  res.json(customers);
-});
+// DB config
+const db = config.get('mongoURI');
+
+// connect mongoose
+mongoose.connect(db, { 
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+})
+    .then(() => console.log('Mongo DB is connected...'))
+    .catch(err => console.log(err))
 
 const PORT = process.env.PORT || 5000;
+
+// Use Routes
+app.use('/api/users', require('./routes/api/Users'));
+app.use('/api/auth', require('./routes/api/Auth'));
 
 app.listen(PORT, () => `Server running on port ${PORT}`);
