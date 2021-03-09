@@ -1,0 +1,23 @@
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.movie {
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    width: 20%;
+    flex: 1;
+    text-align: center;
+}
+
+.movie .card{
+    height: 480px;
+  
+}
+
+.movie .card-image {
+    width: 200px;
+    margin: auto;
+}

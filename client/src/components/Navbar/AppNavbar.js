@@ -9,9 +9,9 @@ import {
     NavLink,
     Container     
 } from 'reactstrap';
-import RegisterModal from './Auth/RegisterModal';
-import Login from './Auth/Login';
-import Logout from './Auth/Logout';
+import RegisterModal from '../Auth/RegisterModal';
+import Login from '../Auth/Login';
+import Logout from '../Auth/Logout';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
@@ -59,9 +59,9 @@ class AppNavbar extends Component{
         )
         return ( 
             <div>
-                <Navbar color="dark" dark expand='sm' className="mb-5">
+                <Navbar color="dark" dark expand='sm' >
                     <Container>
-                        <NavbarBrand href="/">Movie</NavbarBrand>
+                        <NavbarBrand href="/">MovieBest</NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
