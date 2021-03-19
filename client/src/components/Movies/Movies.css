@@ -21,3 +21,38 @@
     width: 200px;
     margin: auto;
 }
+
+/** MOVIE PAGE **/
+
+.movie-page {
+    background-color: aqua;
+    height: 1000px;
+}
+
+.movie-page .container {
+    width: 80%;
+    margin-top: 15px;
+    padding: 30px;
+    background-color: blueviolet;
+}
+
+.movie-page .container .poster {
+    width: 300px;
+    margin: 10px;
+}
+
+.movie-page .container .body {
+    margin-left:20px;
+    margin-top: 50px;
+    color: #fff;
+    font-size: 20px;
+    text-align: start;
+}
+
+.movie-page .container .heading {
+    font-size: 40px;
+}
+
+.movie-page .container .overview {
+    font-size: 20px;
+}

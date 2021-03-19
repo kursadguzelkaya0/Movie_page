@@ -6,7 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 
 const Movie = ({ movie }) =>{
-    const IMAGE_URL = 'https://image.tmdb.org/t/p/w200/'
+    const IMAGE_URL = 'https://image.tmdb.org/t/p/w200/';
     return(
         <div className="movie"> 
             <Card className="card">
