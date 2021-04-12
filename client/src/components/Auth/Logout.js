@@ -6,18 +6,19 @@ import { logout } from '../../store/actions/authActions';
 
 
 
-class Logout extends Component{
-    static propTypes = {
-        logout: PropTypes.func.isRequired
-    };
-
-    render(){
-        return ( 
-            <Fragment>
-                <NavLink onClick={ this.props.logout } href='#'>Logout</NavLink>
-            </Fragment>
-        )
-    }
+const Logout = (props) => {
+    
+    return ( 
+        <Fragment>
+            <NavLink onClick={ props.logout } href='#'>Logout</NavLink>
+        </Fragment>
+    )
+    
 }
+
+Logout.propTypes = {
+    logout: PropTypes.func.isRequired
+};
+
 
 export default connect(null, { logout })(Logout);
