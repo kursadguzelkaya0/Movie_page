@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import './App.css';
@@ -13,35 +13,34 @@ import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MoviePage from './components/Movies/MoviePage';
 
-class App extends Component {
-  componentDidMount() {
+const App = () => {
+  
+  useEffect(() => {
     store.dispatch(loadUser());
-  }  
+  }, [loadUser]);
 
-  render () {
-    const Home = () => (
-      <div className="main">
-            <Showcase />
-            <Container className="main" fluid="xl">
-              <Movies />
-            </Container>
-      </div>)
-    
-    return (
-      <Provider store={ store }>
-        <Router>
-          <div className="App">
-            <AppNavbar />
-            <Switch>
-              <Route path="/" exact component={ Home } />
-              <Route path="/:id" component={ MoviePage } />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </Provider>
-    )
-  }
+  const Home = () => (
+    <div className="main">
+          <Showcase />
+          <Container className="main" fluid="xl">
+            <Movies />
+          </Container>
+    </div>)
+  
+  return (
+    <Provider store={ store }>
+      <Router>
+        <div className="App">
+          <AppNavbar />
+          <Switch>
+            <Route path="/" exact component={ Home } />
+            <Route path="/:id" component={ MoviePage } />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
+  )
 }
 
-export default App
+export default App;
