@@ -12,5 +12,8 @@ export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 export const GET_ERRORS = 'GET_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const GET_MOVIES = 'GET_MOVIES';
+export const MOVIES_LOAD_SUCCESS = 'MOVIES_LOAD_SUCCESS';
+export const MOVIES_LOAD_FAIL = 'MOVIES_LOAD_FAIL';
 
 
