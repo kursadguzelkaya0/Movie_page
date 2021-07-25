@@ -24,6 +24,7 @@
     "mongoose": "^5.11.13",
     "nodemon": "^1.19.1",
     "react-router-dom": "^5.2.0",
-    "reactstrap": "^8.9.0"
+    "reactstrap": "^8.9.0",
+    "redux-saga": "^1.1.3"
   }
 }
