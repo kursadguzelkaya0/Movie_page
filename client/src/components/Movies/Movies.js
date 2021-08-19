@@ -1,15 +1,17 @@
 import React,{ useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
+
 import { getMovies } from '../../store/actions/movieActions'
 import Movie from './Movie';
 import './Movies.css'
 
-function Movies(props) {
+const Movies = ({ movies }) => {
 
     const [query, setQuery] = useState("avengers");
     const [search, setSearch] = useState("");
 
     const dispatch = useDispatch();
+
     useEffect(() => {
         // searchMovies();
         dispatch(getMovies(query));
@@ -28,27 +30,26 @@ function Movies(props) {
     };
 
     return(
-        <div>
+        <div className="movies-site">
             <form className="search-form" onSubmit={updateQuery}>
                 <input className="search-bar" type="text" value={search} onChange={updateSearch}></input>
                 <button className="search-btn" type="submit" >Search </button>
             </form>
             <div className="movies">
-            {
-                props.movies.map(movie => (
-                    <Movie key={ movie.title } movie={ movie } />
-                ))
-            }
+                { movies.map(movie => (<Movie key={ movie.title } movie={ movie } />)) }
             </div>
         </div>
     );
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
-        movies: state.movie.movies
+        movies: state.movie.movies,
     }
 }
 
-export default connect(mapStateToProps, { getMovies })(Movies);
+const mapActionsToProps = {
+    getMovies,
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Movies);

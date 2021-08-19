@@ -8,7 +8,6 @@ const INITIAL_STATE = {
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
         case MOVIES_LOAD_SUCCESS:
-            console.log(action.payload)
             return { 
                 ...state, 
                 movies: action.payload 

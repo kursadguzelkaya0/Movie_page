@@ -6,29 +6,23 @@ const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'f9e274276050bf3ab215535300d9eb1e';
 const query = 'avengers'
 
-export function* testSaga() {
-    console.log("Başladık aga")
-}
-
 export function* fetchMovies(query) {
     try {
-        const result = yield call(axios, `${API_URL}search/movie?api_key=${ API_KEY }&language=en-US&query=${ query }&page=1&include_adult=false`)
-        console.log(result.data.results);
+        const result = yield call(axios, `${API_URL}search/movie?api_key=${ API_KEY }&language=en-US&query=${ query }&page=1&include_adult=false`);
         yield put({type: MOVIES_LOAD_SUCCESS, payload: result.data.results});
     } catch (error) {
         yield put({type: MOVIES_LOAD_FAIL, payload: error});
-        console.log(error);
-        console.log(1)
+        console.error(error.message);
     }
 }
 
 export function* actionWatcher() {
     while(true) {
         const query = yield take(GET_MOVIES);
-        yield call(fetchMovies, query.payload)
+        yield call(fetchMovies, query.payload);
     }
 }
 
 export function* rootSaga() {
-    yield all([call(actionWatcher)])
+    yield all([call(actionWatcher)]);
 }

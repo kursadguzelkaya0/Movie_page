@@ -1,13 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
-import { Container, Row, Col } from 'reactstrap';
-import { Media } from 'reactstrap';
-
-
-
 
 const MoviePage = ({ match }) =>{
     const API_URL = 'https://api.themoviedb.org/3/';
@@ -32,23 +23,15 @@ const MoviePage = ({ match }) =>{
 
     return(
         <div className="movie-page"> 
-          { <div>
-                <Container className="container">
-                    <Media>
-                        <Media left href="#">
-                            <Media className="poster" object src={ IMAGE_URL + movie.poster_path } alt="Generic placeholder image" />
-                        </Media>
-                        <Media className="body" body>
-                            <Media className="heading" heading>
-                            { movie.title }
-                            </Media  >
-                            <p className="date">{ movie.release_date }</p>
-                            <p className="overview">{ movie.overview }</p>
-                            <p className="vote">{ movie.vote_average }</p>
-                        </Media>
-                    </Media>
-                </Container>
-            </div>}
+            <div className="movie-wrapper">
+                <img src={IMAGE_URL + movie.poster_path} alt="movie-image"/>
+                <div className="movie-page-body">
+                    <h2 className="title">{ movie.title }</h2>
+                    <p className="date description">{ movie.release_date }</p>
+                    <p className="overview description">{ movie.overview }</p>
+                    <p className="vote description">{ movie.vote_average }</p>
+                </div>
+            </div>
         </div>
         
     )
