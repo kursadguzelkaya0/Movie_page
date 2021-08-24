@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <div className="footer">
-      <p>MovieBest Copyright© Kürşad Güzelkaya 2021</p>
+      <p>MovieBest Copyright © Kürşad Güzelkaya 2021</p>
     </div>
   );
 };
