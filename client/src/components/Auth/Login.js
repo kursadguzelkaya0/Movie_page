@@ -80,7 +80,7 @@ class LoginModal extends Component {
     render() {
         return(
             <div>
-                <NavLink onClick={this.toggle} href='#' > Login </NavLink>
+                <NavLink onClick={this.toggle} href='#' > Sign In </NavLink>
                 
                 <Modal
                     isOpen={this.state.modal}
@@ -89,7 +89,7 @@ class LoginModal extends Component {
                     <ModalHeader
                         toggle={this.toggle}
                     >
-                        User Login
+                        User Sign In
                     </ModalHeader>
                     <ModalBody>
                         { this.state.msg ? <Alert color='danger'>{ this.state.msg }</Alert> : null }
@@ -120,7 +120,7 @@ class LoginModal extends Component {
                                     color='dark'
                                     style={{marginTop: '2rem'}}
                                     block
-                                >login</Button>
+                                >Sign In</Button>
                             </FormGroup>
                         </Form>
                     </ModalBody>

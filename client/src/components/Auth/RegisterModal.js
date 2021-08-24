@@ -88,7 +88,7 @@ class RegisterModal extends Component {
     render() {
         return(
             <div>
-                <NavLink onClick={this.toggle} href='#' > Register </NavLink>
+                <NavLink onClick={this.toggle} href='#' > Sign Up </NavLink>
                 
                 <Modal
                     isOpen={this.state.modal}
@@ -97,7 +97,7 @@ class RegisterModal extends Component {
                     <ModalHeader
                         toggle={this.toggle}
                     >
-                        Add To Shopping List
+                        User Sign Up
                     </ModalHeader>
                     <ModalBody>
                         { this.state.msg ? <Alert color='danger'>{ this.state.msg }</Alert> : null }
@@ -148,7 +148,7 @@ class RegisterModal extends Component {
                                     color='dark'
                                     style={{marginTop: '2rem'}}
                                     block
-                                >Register</Button>
+                                >Sign Up</Button>
                             </FormGroup>
                         </Form>
                     </ModalBody>
