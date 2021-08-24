@@ -1,0 +1,48 @@
+.landing-page {
+}
+
+.image-part {
+  height: 949px;
+  background-image: url("../../assets/rows-red-seats-theater.jpg");
+  background-size: cover;
+
+  padding: 20px;
+}
+
+.landing-info {
+  margin-bottom: 300px;
+}
+
+.landing-info-header {
+  margin-top: 80px;
+  color: #fff;
+  font-size: 36px;
+  display: block;
+}
+
+.landing-info-body {
+  margin-top: 90px;
+  color: #fff;
+  font-size: 70px;
+  display: block;
+}
+
+.landing-info-description {
+  margin-top: 50px;
+  color: #fff;
+  font-size: 25px;
+  display: block;
+}
+
+.button {
+  color: #fff;
+  background: #e50914;
+  padding: 5px 25px;
+  border: none;
+  margin:30px 10px;
+}
+
+.icon {
+  width: 16px;
+  margin-right: 4px;
+}

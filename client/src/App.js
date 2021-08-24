@@ -10,6 +10,7 @@ import { loadUser } from './store/actions/authActions';
 import Movies from './components/Movies/Movies';
 import Footer from './components/Footer/Footer';
 import MoviePage from './components/Movies/MoviePage';
+import LandingPage from './components/LandingPage';
 
 const App = () => {
   
@@ -26,12 +27,11 @@ const App = () => {
     <Provider store={ store }>
       <Router>
         <div className="App">
-          <AppNavbar />
           <Switch>
-            <Route path="/" exact component={ Home } />
+            <Route path="/home" exact component={ Home } />
             <Route path="/:id" component={ MoviePage } />
+            <Route path="/" component={ LandingPage } />
           </Switch>
-          <Footer />
         </div>
       </Router>
     </Provider>
