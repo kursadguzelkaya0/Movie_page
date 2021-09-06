@@ -42,6 +42,11 @@
   margin:30px 10px;
 }
 
+.landing-page .button .open-modal a{
+  color: #fff;
+  padding: 0;
+}
+
 .icon {
   width: 16px;
   margin-right: 4px;
