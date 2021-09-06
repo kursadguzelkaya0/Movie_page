@@ -79,7 +79,7 @@ class LoginModal extends Component {
 
     render() {
         return(
-            <div>
+            <div className="open-modal">
                 <NavLink onClick={this.toggle} href='#' > Sign In </NavLink>
                 
                 <Modal
