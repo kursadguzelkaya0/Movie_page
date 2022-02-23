@@ -17,13 +17,15 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
-    "concurrently": "^4.1.1",
+    "concurrently": "^7.0.0",
     "config": "^3.3.3",
+    "dispatch": "^1.0.2",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.13",
     "nodemon": "^1.19.1",
     "react-router-dom": "^5.2.0",
+    "react-router-redux": "^4.0.8",
     "reactstrap": "^8.9.0",
     "redux-saga": "^1.1.3"
   }

@@ -67,10 +67,10 @@ class LoginModal extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-
+        const {history}  = this.props;
         const { email, password } = this.state;
 
-        const user = { email, password  };
+        const user = { email, password, history };
 
         // Attempt to login
         this.props.login(user);

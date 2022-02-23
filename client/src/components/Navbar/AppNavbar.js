@@ -38,7 +38,7 @@ class AppNavbar extends Component{
         const guestLinks = (
             <Fragment>
                 <NavItem>
-                    <Login />
+                    <Login history={this.props.history} />
                 </NavItem>
                 <NavItem>
                     <RegisterModal />

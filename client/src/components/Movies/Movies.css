@@ -2,7 +2,6 @@
     padding: 30px 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: #fff;
 }
 
 .movies-site  .search-form{
@@ -29,6 +28,11 @@
     justify-content: space-between;
     margin: auto;
 }
+
+.movies-site .movies a:link{
+    text-decoration: none;
+}
+
 .movie {
     background-color: rgb(226, 226, 226);
     width: 250px;

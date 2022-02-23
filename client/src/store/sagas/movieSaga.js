@@ -1,4 +1,4 @@
-import { all, take, call, put } from '@redux-saga/core/effects';
+import { takeEvery, call, put, } from '@redux-saga/core/effects';
 import { GET_MOVIES, MOVIES_LOAD_SUCCESS, MOVIES_LOAD_FAIL } from '../actions/types';
 import axios from 'axios';
 
@@ -16,13 +16,12 @@ export function* fetchMovies(query) {
     }
 }
 
-export function* actionWatcher() {
-    while(true) {
-        const query = yield take(GET_MOVIES);
-        yield call(fetchMovies, query.payload);
-    }
+export function* getMovies(action) {
+    yield call(fetchMovies, action.payload);
 }
 
-export function* rootSaga() {
-    yield all([call(actionWatcher)]);
-}
+const movieSaga = [
+    takeEvery(GET_MOVIES, getMovies),
+];
+
+export default movieSaga;

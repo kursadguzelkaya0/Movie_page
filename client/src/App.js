@@ -1,22 +1,24 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import './App.css';
 import store from './store';
-import AppNavbar from './components/Navbar/AppNavbar';
+// import AppNavbar from './components/Navbar/AppNavbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { loadUser } from './store/actions/authActions';
 import Movies from './components/Movies/Movies';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import MoviePage from './components/Movies/MoviePage';
 import LandingPage from './components/LandingPage';
+import AppNavbar from './components/Navbar/AppNavbar';
 
 const App = () => {
   
   useEffect(() => {
     store.dispatch(loadUser());
-  }, [loadUser]);
+  }, []);
 
   const Home = () => (
     <div className="main">
@@ -27,11 +29,12 @@ const App = () => {
     <Provider store={ store }>
       <Router>
         <div className="App">
-          <Switch>
-            <Route path="/home" exact component={ Home } />
-            <Route path="/:id" component={ MoviePage } />
-            <Route path="/" component={ LandingPage } />
-          </Switch>
+          <AppNavbar />
+          <Routes>
+            <Route path="/home" exact element={ <Home /> } />
+            <Route path="/:id" element={ <MoviePage />} />
+            <Route path="/" element={ <LandingPage />} />
+          </Routes>
         </div>
       </Router>
     </Provider>

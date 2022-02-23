@@ -1,4 +1,12 @@
 .App {
   text-align: center;
   min-height: 850px;
+
+  background-image: url("./assets/rows-red-seats-theater.jpg");
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+
+  padding: 20px;
 }
+

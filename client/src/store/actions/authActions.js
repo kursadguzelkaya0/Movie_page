@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { returnErorrs } from './errorActions';
-import { USER_LOADING, USER_LOADED, AUTH_ERROR, LOGIN_FAIL, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_SUCCESS, LOGOUT_SUCCESS } from './types';
+import { USER_LOADING, USER_LOADED, AUTH_ERROR, LOGIN_FAIL, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_SUCCESS, LOGOUT_SUCCESS, REDIRECT_TO_HOME } from './types';
 
 // Check token & load user
 export const loadUser = () => (dispatch, getState)=> {
@@ -48,7 +48,7 @@ export const register = ({ name, email, password, password2 }) => dispatch => {
 }
 
 // Login User
-export const login = ({ email, password }) => dispatch => {
+export const login = ({ email, password, history }) => dispatch => {
     // Headers
     const config = {
         headers: {
@@ -60,10 +60,16 @@ export const login = ({ email, password }) => dispatch => {
     const body = JSON.stringify({ email, password });
 
     axios.post('/api/auth', body, config)
-        .then(res => dispatch({
-            type: LOGIN_SUCCESS,
-            payload: res.data
-        }))
+        .then(res => {
+            dispatch({
+                type: LOGIN_SUCCESS,
+                payload: res.data
+            });
+            dispatch({
+                type: REDIRECT_TO_HOME,
+                payload: history,
+            });
+        })
         .catch(err => {
             dispatch(returnErorrs(err.response.data, err.response.status, "LOGIN_FAIL"));
             dispatch({
@@ -98,3 +104,8 @@ export const configToken = getState => {
 
     return config;
 }
+
+export const redirectToHome = history => ({
+    type: REDIRECT_TO_HOME,
+    payload: history
+});
