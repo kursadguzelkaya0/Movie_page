@@ -2,15 +2,11 @@
 }
 
 .image-part {
-  height: 949px;
-  background-image: url("../../assets/rows-red-seats-theater.jpg");
-  background-size: cover;
-
   padding: 20px;
 }
 
 .landing-info {
-  margin-bottom: 300px;
+  margin-bottom: 230px;
 }
 
 .landing-info-header {
