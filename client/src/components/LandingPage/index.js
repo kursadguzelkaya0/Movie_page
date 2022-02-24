@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 
 import Login from '../Auth/Login';
 import RegisterModal from '../Auth/RegisterModal';
@@ -8,16 +8,20 @@ import Footer from '../Footer/Footer';
 import AppNavbar from '../Navbar/AppNavbar';
 import './LandingPage.css';
 import { redirectToHome } from '../../store/actions/authActions';
+import { updateHistory } from '../../store/actions/movieActions';
 
 const LandingPage = () => {
   const history  = useNavigate();
+  const dispatch = useDispatch()
 
-  console.log(history);
+  useEffect(() => {
+    dispatch(updateHistory(history));
+  }, [updateHistory, history]);
+  
   
   return (
     <div className="landing-page">
       <div className="image-part">
-        <AppNavbar history={history} />
         <div className="landing-info">
           <span className="landing-info-header">MovieBest</span>
           <span className="landing-info-body">Find Best Movies Easily</span>
@@ -31,4 +35,4 @@ const LandingPage = () => {
   );
 };
 
-export default connect(null, { redirectToHome })(LandingPage);
+export default connect(null, { redirectToHome, updateHistory })(LandingPage);

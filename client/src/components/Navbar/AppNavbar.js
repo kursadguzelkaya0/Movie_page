@@ -34,11 +34,12 @@ class AppNavbar extends Component{
 
     render(){
         const { isAuthenticated, user } = this.props.auth;
+        const { history } = this.props.movie;
         
         const guestLinks = (
             <Fragment>
                 <NavItem>
-                    <Login history={this.props.history} />
+                    <Login history={history} />
                 </NavItem>
                 <NavItem>
                     <RegisterModal />
@@ -76,7 +77,8 @@ class AppNavbar extends Component{
 }
 
 const mapStateToProps = state => ({
-    auth: state.auth
+    auth: state.auth,
+    movie: state.movie
 });
 
 export default connect(mapStateToProps, null)(AppNavbar);
