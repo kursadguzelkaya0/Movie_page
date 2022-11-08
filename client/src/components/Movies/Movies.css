@@ -4,16 +4,16 @@
     box-sizing: border-box;
 }
 
-.movies-site  .search-form{
+.movies-site .search-form {
     margin-bottom: 30px;
 }
 
-.movies-site  .search-form .search-bar{
+.movies-site .search-form .search-bar {
     padding: 4px;
     border-radius: 4px;
 }
 
-.movies-site  .search-form .search-btn{
+.movies-site .search-form .search-btn {
     padding: 4px 8px;
     border-radius: 4px;
     margin-left: 5px;
@@ -29,7 +29,7 @@
     margin: auto;
 }
 
-.movies-site .movies a:link{
+.movies-site .movies a:link {
     text-decoration: none;
 }
 
@@ -53,16 +53,16 @@
     display: block;
 }
 
-.description{
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
-  color: #637381;
+.description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #637381;
 }
 
-.movie .card-body .title{
+.movie .card-body .title {
     display: block;
-  
+
 }
 
 /** MOVIE PAGE **/
@@ -87,15 +87,16 @@
     box-shadow: 5px 10px 10px rgba(0, 0, 0, .2);
 }
 
-.movie-page .movie-wrapper img{
+.movie-page .movie-wrapper img {
     flex: 1;
 }
 
 .movie-page .movie-wrapper .movie-page-body {
     flex: 2;
-    margin-left:20px;
+    margin-left: 20px;
     text-align: center;
 }
+
 .movie-page .movie-wrapper .movie-page-body .title {
     font-size: 40px;
     margin-bottom: 20px;

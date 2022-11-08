@@ -24,7 +24,7 @@ router.post('/', (req,res) => {
             if(user) return res.status(400).json({ msg: 'Email already exists' });
 
             // Password must be longer than 6
-            if(password.length() < 6) return res.status(400).json({ msg: 'Password must be longer than 6 letter'})
+            if(password.length < 6) return res.status(400).json({ msg: 'Password must be longer than 6 letter'})
         
             // Does passwords match
             if (password !== password2) return res.status(400).json({ msg: 'Passwords do not match' });
@@ -63,6 +63,7 @@ router.post('/', (req,res) => {
             });
         })
     .catch(err => {
+        console.log(err)
         res.status(400).json({ msg: "Something is wrong"})
     })
 });

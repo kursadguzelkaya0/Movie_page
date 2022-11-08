@@ -9,11 +9,12 @@ import {
     NavLink,
     Container     
 } from 'reactstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import RegisterModal from '../Auth/RegisterModal';
 import Login from '../Auth/Login';
 import Logout from '../Auth/Logout';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
 
 class AppNavbar extends Component{
     state = {
@@ -42,7 +43,7 @@ class AppNavbar extends Component{
                     <Login history={history} />
                 </NavItem>
                 <NavItem>
-                    <RegisterModal />
+                    <RegisterModal history={history} />
                 </NavItem>
             </Fragment>
         );

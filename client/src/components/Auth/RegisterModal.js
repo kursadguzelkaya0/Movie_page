@@ -15,6 +15,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { register } from '../../store/actions/authActions';
 import { clearErrors } from '../../store/actions/errorActions';
+import { Link, useNavigate } from 'react-router-dom';
 
 class RegisterModal extends Component {
     state = {
@@ -71,15 +72,15 @@ class RegisterModal extends Component {
         e.preventDefault();
 
         const { name, email, password, password2 } = this.state;
-
+        const {history}  = this.props;
         // Create user
         const newUser ={
             name,
             email,
             password,
-            password2
+            password2,
+            history
         };
-
         // Register User
         this.props.register(newUser);
 

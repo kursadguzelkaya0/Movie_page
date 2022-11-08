@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-const MoviePage = ({ match }) =>{
+
+const MoviePage = () =>{
     const API_URL = 'https://api.themoviedb.org/3/';
     const API_KEY = 'f9e274276050bf3ab215535300d9eb1e';
 
     const [movie, setMovie] = useState({});
     
+    const { id } = useParams();
     useEffect(() => {
-        getMovie(match.params.id);
+        getMovie(id);
     }, [])
 
     const getMovie = (movie_id) => {
@@ -32,6 +35,9 @@ const MoviePage = ({ match }) =>{
                     <p className="vote description">{ movie.vote_average }</p>
                 </div>
             </div>
+            <Link to={'/home'}>
+                <button className='button'>Back</button>
+            </Link>
         </div>
         
     )

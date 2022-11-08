@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://kursadguzelkaya:18482122974@project0.grrfe.mongodb.net/movie",
+    "mongoURI": "mongodb+srv://kursadguzelkaya:18482122974@project0.grrfe.mongodb.net/?retryWrites=true&w=majority",
     "jwtSecret": "ml_jwtSecret"
 }
